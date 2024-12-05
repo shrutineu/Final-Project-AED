@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Komal
+ * @author ishaansamel
  */
 public class AmbulanceWorkArea extends javax.swing.JPanel {
 

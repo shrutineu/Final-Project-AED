@@ -37,7 +37,7 @@ import org.json.JSONObject;
 
 /**
  *
- * @author Reema
+ * @author Msanskruti
  */
 public class DroneWorkArea extends javax.swing.JPanel {
 

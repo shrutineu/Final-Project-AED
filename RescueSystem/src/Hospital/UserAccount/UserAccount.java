@@ -11,7 +11,7 @@ import Hospital.WorkQueue.WorkQueue;
 
 /**
  *
- * @author Sayali
+ * @author Msanskruti
  */
 public class UserAccount {
     
