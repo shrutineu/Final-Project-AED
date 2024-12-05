@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Komal
+ * @author Msanskruti
  */
 public class EmergencySystemAdminOrganisation  extends Organisation{
 

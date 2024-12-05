@@ -7,7 +7,7 @@ package Person;
 
 /**
  *
- * @author Sayali
+ * @author ishaansamel
  */
 public class Person {
     private String name;

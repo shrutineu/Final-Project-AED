@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Komal
+ * @author Msanskruti
  */
 public class DroneRole extends Role {
 

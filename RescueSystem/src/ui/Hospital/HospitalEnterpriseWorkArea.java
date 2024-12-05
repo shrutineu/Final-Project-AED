@@ -29,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Komal
+ * @author ishaansamel
  */
 public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
 

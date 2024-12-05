@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @Reema
+ *
  */
 public class AmbulanceOrganisation extends Organisation{
 

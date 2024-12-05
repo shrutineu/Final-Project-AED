@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Komal
+ * @author Msanskruti
  */
 public class AmbulanceRole extends Role {
 

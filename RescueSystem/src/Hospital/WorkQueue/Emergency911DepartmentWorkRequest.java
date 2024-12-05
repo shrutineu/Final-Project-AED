@@ -10,7 +10,7 @@ import Employee.Employee;
 
 /**
  *
- * @author Sayali
+ * @author ishaansamel
  */
 public class Emergency911DepartmentWorkRequest extends WorkRequest implements Comparable{
     private Employee employee;

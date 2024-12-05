@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Reema
+ * @author shrutisen
  */
 public class EmergencySystem extends Organisation{
    private ArrayList<Network> networkList;
