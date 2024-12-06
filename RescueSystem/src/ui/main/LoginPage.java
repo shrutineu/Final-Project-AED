@@ -6,6 +6,7 @@
 package ui.main;
 
 import DB04.DB4OUtil;
+import EmergencySystem.ConfigureASystem;
 import EmergencySystem.EmergencySystem;
 import EmergencySystem.Enterprise.Enterprise;
 import EmergencySystem.Network.Network;
@@ -32,7 +33,7 @@ public class LoginPage extends javax.swing.JFrame {
         initComponents();
         
 
-       // emergencySystemObject=ConfigureASystem.configure();
+        emergencySystemObject= ConfigureASystem.configure();
         emergencySystemObject = dB4OUtil.retrieveSystem();
         loginBtn.setBackground(Color.BLACK);
         loginBtn.setForeground(Color.GRAY);

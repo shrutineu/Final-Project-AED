@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.emergency911;
+package ui.emergency911department;
 
 
 
@@ -35,7 +35,7 @@ import org.json.JSONObject;
 
 /**
  *
- * @author Msanskruti
+ * @author Reema
  */
 public class emergency911WorkArea extends javax.swing.JPanel {
 
@@ -230,7 +230,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             try
             {
             location=emerg.getLocationOfEmergency().replaceAll("\\s","");
-            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+location+"&destinations=24+Beacon+St,+Boston,+MA+01233|4+Yawkey+Way,+Boston,+MA+02215|300+Fenway,+Boston,+MA+02115&key=AIzaSyAUftFKfNIO2RI64ZJM0joAG6Xtnolpc_8");
+            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+location+"&destinations=24+Beacon+St,+Boston,+MA+01233|4+Yawkey+Way,+Boston,+MA+02215|300+Fenway,+Boston,+MA+02115&key=AIzaSyD8bhPl4z1ETG7_FySpu3zWZSMAIsWpdgU");
            
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -469,7 +469,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         }
 
         processTheEmrgBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        processTheEmrgBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449792327_process.png"))); // NOI18N
+        processTheEmrgBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911department/images/1449792327_process.png"))); // NOI18N
         processTheEmrgBtn.setText("Process the emergency");
         processTheEmrgBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -617,7 +617,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         closestDroneStation.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
         showDroneBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        showDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449793043_Paper_Plane.png"))); // NOI18N
+        showDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911department/images/1449793043_Paper_Plane.png"))); // NOI18N
         showDroneBtn.setText("Show drone");
         showDroneBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -651,7 +651,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         jScrollPane4.setViewportView(droneStationTable);
 
         showActiveDroneBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        showActiveDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449792985_Paper-Plane.png"))); // NOI18N
+        showActiveDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911department/images/1449792985_Paper-Plane.png"))); // NOI18N
         showActiveDroneBtn.setText("Show active drones");
         showActiveDroneBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -674,7 +674,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         inSecLabel.setText("in seconds");
 
         calBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        calBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449792431_cloud-calculator.png"))); // NOI18N
+        calBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911department/images/1449792431_cloud-calculator.png"))); // NOI18N
         calBtn.setText("Calculate");
         calBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -748,7 +748,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
                     .addComponent(displacementLabel)
                     .addComponent(displacementTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inKmsLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(alertTheDRonePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inSecLabel)
@@ -798,7 +798,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         jLabel10.setText("Drone station address:");
 
         addDroneStnBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        addDroneStnBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449768059_More.png"))); // NOI18N
+        addDroneStnBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911department/images/1449768059_More.png"))); // NOI18N
         addDroneStnBtn.setText("Add drone station");
         addDroneStnBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -936,7 +936,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         });
 
         addDroneBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        addDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449768059_More.png"))); // NOI18N
+        addDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911department/images/1449768059_More.png"))); // NOI18N
         addDroneBtn.setText("Add drone");
         addDroneBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -957,7 +957,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         });
 
         createUserAccountBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        createUserAccountBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1447997078_user.png"))); // NOI18N
+        createUserAccountBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911department/images/1447997078_user.png"))); // NOI18N
         createUserAccountBtn.setText("Create user account");
         createUserAccountBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

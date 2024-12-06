@@ -225,7 +225,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/ui/emergency911/images/1449792327_process.png"/>
+                  <Image iconType="3" name="/ui/emergency911department/images/1449792327_process.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Process the emergency"/>
               </Properties>
@@ -501,7 +501,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/ui/emergency911/images/1449793043_Paper_Plane.png"/>
+                  <Image iconType="3" name="/ui/emergency911department/images/1449793043_Paper_Plane.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Show drone"/>
               </Properties>
@@ -551,7 +551,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/ui/emergency911/images/1449792985_Paper-Plane.png"/>
+                  <Image iconType="3" name="/ui/emergency911department/images/1449792985_Paper-Plane.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Show active drones"/>
               </Properties>
@@ -607,7 +607,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/ui/emergency911/images/1449792431_cloud-calculator.png"/>
+                  <Image iconType="3" name="/ui/emergency911department/images/1449792431_cloud-calculator.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Calculate"/>
               </Properties>
@@ -825,7 +825,7 @@
                           <Font name="Tahoma" size="11" style="1"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/ui/emergency911/images/1449768059_More.png"/>
+                          <Image iconType="3" name="/ui/emergency911department/images/1449768059_More.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Add drone station"/>
                       </Properties>
@@ -1049,7 +1049,7 @@
                           <Font name="Tahoma" size="11" style="1"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/ui/emergency911/images/1449768059_More.png"/>
+                          <Image iconType="3" name="/ui/emergency911department/images/1449768059_More.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Add drone"/>
                       </Properties>
@@ -1084,7 +1084,7 @@
                           <Font name="Tahoma" size="11" style="1"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/ui/emergency911/images/1447997078_user.png"/>
+                          <Image iconType="3" name="/ui/emergency911department/images/1447997078_user.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Create user account"/>
                       </Properties>
