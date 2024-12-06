@@ -115,7 +115,6 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
         emergencyTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        retrieveLicensePlateBtn = new javax.swing.JButton();
         licensePlateLabel = new javax.swing.JLabel();
         licensePlateNumberTF = new javax.swing.JTextField();
         retrieveDataBtn = new javax.swing.JButton();
@@ -194,17 +193,8 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        retrieveLicensePlateBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        retrieveLicensePlateBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Police/Images/1449766076_finance-10.png"))); // NOI18N
-        retrieveLicensePlateBtn.setText("Retrieve the license plate");
-        retrieveLicensePlateBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                retrieveLicensePlateBtnActionPerformed(evt);
-            }
-        });
-
         licensePlateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        licensePlateLabel.setText("Retrieve person data from license plate:");
+        licensePlateLabel.setText("Retrieve person data from license plate number:");
 
         retrieveDataBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         retrieveDataBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Police/Images/1449765858_cloud-arrow-down.png"))); // NOI18N
@@ -263,15 +253,10 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(132, 132, 132)
-                                .addComponent(licensePlateLabel)
-                                .addGap(38, 38, 38)
-                                .addComponent(licensePlateNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(248, 248, 248)
-                                .addComponent(retrieveLicensePlateBtn)))
+                        .addGap(132, 132, 132)
+                        .addComponent(licensePlateLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(licensePlateNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
@@ -286,7 +271,7 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
                             .addComponent(phoneNumberLabel)
                             .addComponent(licensePlaeNumberLabel)
                             .addComponent(emergencyContactNumberLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nameTF, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                             .addComponent(ageTF)
@@ -310,12 +295,11 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(retrieveLicensePlateBtn)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(48, 48, 48)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(licensePlateLabel)
                     .addComponent(licensePlateNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -358,7 +342,7 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(photoLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(alertFamBtn)
                 .addGap(36, 36, 36))
         );
@@ -455,47 +439,6 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_alertFamBtnActionPerformed
 
-    private void retrieveLicensePlateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retrieveLicensePlateBtnActionPerformed
-        // TODO add your handling code here:
-        int row=emergencyTable.getSelectedRow();
-        Emergency emergency=null;
-//        if(row>=0)
-//        {
-//            emergency=(Emergency) emergencyTable.getValueAt(row, 2);
-//            String imageUrl=emergency.getLicensePlateURL();
-//            //   imageUrl.replace("\\", "\\\\");
-//                StringBuffer sb = new StringBuffer();
-//
-//                // imageUrl=sb.append("\"").append(imageUrl).append("\"");
-//
-//                String finalPath="";
-//                java.net.URL imgURL = getClass().getResource(imageUrl);
-//                if (imgURL != null) {
-//
-//                    File file=new File(imgURL.toString());
-//                    finalPath=file.toString().replaceAll("\\\\", "\\\\\\\\");
-//                        finalPath=finalPath.substring(7,finalPath.length());
-//                        //System.out.println(finalPath);
-//
-//                    } else {
-//                        System.err.println("Couldn't find file: " + imageUrl);
-//
-//                    }
-//
-//                    opencv_core.IplImage image= cvLoadImage(finalPath);
-//
-//                    final CanvasFrame canvas =new CanvasFrame("License plate");
-//                    canvas.showImage(image);
-//                    canvas.setCanvasSize(500, 300);
-//                    //canvas.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
-//                }
-//
-//                else
-//                {
-//                    JOptionPane.showMessageDialog(this,"Choose an emeregncy from the table");
-//                }
-    }//GEN-LAST:event_retrieveLicensePlateBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addressLabel;
@@ -526,6 +469,5 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
     private javax.swing.JTextField phoneNumberTF;
     private javax.swing.JLabel photoLabel;
     private javax.swing.JButton retrieveDataBtn;
-    private javax.swing.JButton retrieveLicensePlateBtn;
     // End of variables declaration//GEN-END:variables
 }
