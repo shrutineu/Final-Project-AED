@@ -12,10 +12,10 @@ import EmergencySystem.Network.Network;
 import Hospital.UserAccount.UserAccount;
 import Hospital.WorkQueue.Emergency911DepartmentWorkRequest;
 import Hospital.WorkQueue.WorkRequest;
-import com.googlecode.javacv.CanvasFrame;
-import com.googlecode.javacv.cpp.opencv_core.IplImage;
-import com.googlecode.javacv.cpp.opencv_highgui;
-import com.googlecode.javacv.cpp.opencv_highgui.CvCapture;
+//import com.googlecode.javacv.CanvasFrame;
+//import com.googlecode.javacv.cpp.opencv_core.IplImage;
+//import com.googlecode.javacv.cpp.opencv_highgui;
+//import com.googlecode.javacv.cpp.opencv_highgui.CvCapture;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -154,41 +154,41 @@ public class DoctorWorkArea extends javax.swing.JPanel {
         // TODO add your handling code here:
         
         int row=emergencyTable.getSelectedRow();
-        if(row>=0)
-        {
-            Emergency emg=(Emergency) emergencyTable.getValueAt(row, 1);
-            Date d=new Date();
-            emg.setOnCallDoctorIsConnectedViaCamera(d);
-         
-            emg.setTotalTimeForDoctorToGetComnnected((emg.getOnCallDoctorIsConnectedViaCamera().getTime()-emg.getAlertOnCallDoctor().getTime())/1000%60);
-            System.err.println("the time when doc was alerted to doc was connected"+emg.getTotalTimeForDoctorToGetComnnected());
-            Thread webcam=new Thread()
-            {
-            public void run()
-            {
-                
-                CvCapture capture =opencv_highgui.cvCreateCameraCapture(0);
-                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_HEIGHT,500);
-                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_WIDTH,580);
-                IplImage grabbedImage=opencv_highgui.cvQueryFrame(capture);
-                CanvasFrame frame=new CanvasFrame("Webcamera");
-                while(frame.isVisible()&& (grabbedImage=opencv_highgui.cvQueryFrame(capture))!=null)
-                {
-                    frame.showImage(grabbedImage);
-                    emg.setEmergencyStatus("Doctor connected to the camera");
-                    
-                }
-            }
-        };
-        webcam.start();
-            
-            
-        }
-        
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Choose an emergency from the table");
-        }
+//        if(row>=0)
+//        {
+//            Emergency emg=(Emergency) emergencyTable.getValueAt(row, 1);
+//            Date d=new Date();
+//            emg.setOnCallDoctorIsConnectedViaCamera(d);
+//         
+//            emg.setTotalTimeForDoctorToGetComnnected((emg.getOnCallDoctorIsConnectedViaCamera().getTime()-emg.getAlertOnCallDoctor().getTime())/1000%60);
+//            System.err.println("the time when doc was alerted to doc was connected"+emg.getTotalTimeForDoctorToGetComnnected());
+//            Thread webcam=new Thread()
+//            {
+//            public void run()
+//            {
+//                
+//                CvCapture capture =opencv_highgui.cvCreateCameraCapture(0);
+//                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_HEIGHT,500);
+//                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_WIDTH,580);
+//                IplImage grabbedImage=opencv_highgui.cvQueryFrame(capture);
+//                CanvasFrame frame=new CanvasFrame("Webcamera");
+//                while(frame.isVisible()&& (grabbedImage=opencv_highgui.cvQueryFrame(capture))!=null)
+//                {
+//                    frame.showImage(grabbedImage);
+//                    emg.setEmergencyStatus("Doctor connected to the camera");
+//                    
+//                }
+//            }
+//        };
+//        webcam.start();
+//            
+//            
+//        }
+//        
+//        else
+//        {
+//            JOptionPane.showMessageDialog(this, "Choose an emergency from the table");
+//        }
         
      
     }//GEN-LAST:event_connectToPatientBtnActionPerformed
