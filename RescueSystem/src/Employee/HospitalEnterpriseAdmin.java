@@ -7,7 +7,7 @@ package Employee;
 
 /**
  *
- * @author Reema
+ * @author Msanskruti
  */
 public class HospitalEnterpriseAdmin extends Employee{
     

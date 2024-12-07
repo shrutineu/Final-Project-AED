@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Msanskruti
+ * @author shrutisen
  */
 public class PoliceAdminRole extends Role
 {

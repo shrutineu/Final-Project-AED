@@ -19,7 +19,7 @@ import com.db4o.Db4oEmbedded;
  */
 public class DB4OUtil {
 
-    private static final String FILENAME = "/Users/shrutisen/Downloads/AED-Final-Project-Recue-Management-System-master 2/RescueManagementSystem/DataBank.db4o"; //  // path to the data store
+    private static final String FILENAME = "/Users/ishaansamel/Downloads/DataBank.db4o"; //  // path to the data store
     private static DB4OUtil dB4OUtil;
     
     public synchronized static DB4OUtil getInstance(){

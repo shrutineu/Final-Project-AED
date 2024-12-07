@@ -6,7 +6,7 @@ package Employee;
 
 /**
  *
- * @author Reema
+ * @author Msanskruti
  */
 public abstract class Employee {
     
