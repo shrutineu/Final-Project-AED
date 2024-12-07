@@ -46,7 +46,7 @@ import org.json.JSONObject;
 
 /**
  *
- * @author shrutisen
+ * @author ishaansamel
  */
 public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
 

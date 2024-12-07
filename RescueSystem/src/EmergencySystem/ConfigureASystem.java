@@ -36,7 +36,7 @@ import Person.Person;
 
 /**
  *
- * @author Reema
+ * @author shrutisen
  */
 public class ConfigureASystem {
     public static EmergencySystem configure(){
@@ -56,9 +56,9 @@ public class ConfigureASystem {
         
         //Creating person directory
         Person p1=system.getPersonDirectory().addPerson();
-        p1.setName("Ishaan Samel");
-        p1.setAge(24);
-        p1.setAddress("24 Highland Ave, Roxbury");
+        p1.setName("Sayali Borse");
+        p1.setAge(23);
+        p1.setAddress("25 Stephen Street");
         p1.setCarOwned("Mustang");
         p1.setDriversLicenseNumber(871453548);
         p1.setLicensePlateNumber("FP1744");
@@ -68,9 +68,9 @@ public class ConfigureASystem {
         
         
         Person p2=system.getPersonDirectory().addPerson();
-        p2.setName("Sanskruti Mahajan");
-        p2.setAge(22);
-        p2.setAddress("509 Beacon St");
+        p2.setName("Komal Ambekar");
+        p2.setAge(27);
+        p2.setAddress("615 Parker Street");
         p2.setCarOwned("Mercedes Benz");
         p2.setDriversLicenseNumber(665497258);
         p2.setLicensePlateNumber("CI0000");
@@ -79,9 +79,9 @@ public class ConfigureASystem {
         p2.setPhoto("Images/person2.jpg");
         
         Person p3=system.getPersonDirectory().addPerson();
-        p3.setName("Shruti Sen");
-        p3.setAge(23);
-        p3.setAddress("509 Beacon St");
+        p3.setName("Reema Dutta");
+        p3.setAge(58);
+        p3.setAddress("Babcock Street");
         p3.setCarOwned("Audi");
         p3.setDriversLicenseNumber(354876495);
         p3.setLicensePlateNumber("RT72LY");

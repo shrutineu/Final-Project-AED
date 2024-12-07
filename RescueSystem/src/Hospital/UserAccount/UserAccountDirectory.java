@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Msanskruti
+ * @author ishaansamel
  */
 public class UserAccountDirectory {
     
