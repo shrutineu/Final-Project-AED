@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.Police;
+package UserInterface.Police;
 
 import EmergencySystem.Emergency.Emergency;
 import EmergencySystem.EmergencySystem;
@@ -138,7 +138,15 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
         alertFamBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(220, 234, 234));
+        setForeground(new java.awt.Color(102, 0, 0));
+
+        jTabbedPane1.setBackground(new java.awt.Color(102, 0, 0));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         emergencyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -163,21 +171,23 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
             emergencyTable.getColumnModel().getColumn(2).setMaxWidth(250);
         }
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(102, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Accident List");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(jLabel2)
-                .addContainerGap(288, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,18 +196,22 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Work Queue", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(102, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        licensePlateLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        licensePlateLabel.setText("Retrieve person data from license plate number:");
+        licensePlateLabel.setBackground(new java.awt.Color(102, 0, 0));
+        licensePlateLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        licensePlateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        licensePlateLabel.setText("Retrieve person data from license plate:");
 
         retrieveDataBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        retrieveDataBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Police/Images/1449765858_cloud-arrow-down.png"))); // NOI18N
+        retrieveDataBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Police/Images/1449765858_cloud-arrow-down.png"))); // NOI18N
         retrieveDataBtn.setText("Retrieve data");
         retrieveDataBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,25 +221,39 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
 
         photoLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        nameLabel.setBackground(new java.awt.Color(102, 0, 0));
+        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(255, 255, 255));
         nameLabel.setText("Name:");
 
-        ageLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ageLabel.setBackground(new java.awt.Color(102, 0, 0));
+        ageLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ageLabel.setForeground(new java.awt.Color(255, 255, 255));
         ageLabel.setText("Age:");
 
-        addressLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        addressLabel.setBackground(new java.awt.Color(102, 0, 0));
+        addressLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        addressLabel.setForeground(new java.awt.Color(255, 255, 255));
         addressLabel.setText("Address:");
 
-        driverLicenseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        driverLicenseNumberLabel.setBackground(new java.awt.Color(102, 0, 0));
+        driverLicenseNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        driverLicenseNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
         driverLicenseNumberLabel.setText("Drivers license number:");
 
-        carOwnedLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        carOwnedLabel.setBackground(new java.awt.Color(102, 0, 0));
+        carOwnedLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        carOwnedLabel.setForeground(new java.awt.Color(255, 255, 255));
         carOwnedLabel.setText("Car owned:");
 
-        licensePlaeNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        licensePlaeNumberLabel.setBackground(new java.awt.Color(102, 0, 0));
+        licensePlaeNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        licensePlaeNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
         licensePlaeNumberLabel.setText("License plate number:");
 
-        phoneNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        phoneNumberLabel.setBackground(new java.awt.Color(102, 0, 0));
+        phoneNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        phoneNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
         phoneNumberLabel.setText("Phone number:");
 
         addressTF.addActionListener(new java.awt.event.ActionListener() {
@@ -234,11 +262,13 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
             }
         });
 
-        emergencyContactNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        emergencyContactNumberLabel.setBackground(new java.awt.Color(102, 0, 0));
+        emergencyContactNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        emergencyContactNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
         emergencyContactNumberLabel.setText("Emergency contact number:");
 
         alertFamBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        alertFamBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Police/Images/1449766211_send.png"))); // NOI18N
+        alertFamBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Police/Images/1449766211_send.png"))); // NOI18N
         alertFamBtn.setText("Alert the family about the incidence");
         alertFamBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,7 +285,7 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addComponent(licensePlateLabel)
-                        .addGap(18, 18, 18)
+                        .addGap(38, 38, 38)
                         .addComponent(licensePlateNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -271,7 +301,7 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
                             .addComponent(phoneNumberLabel)
                             .addComponent(licensePlaeNumberLabel)
                             .addComponent(emergencyContactNumberLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nameTF, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                             .addComponent(ageTF)
@@ -295,11 +325,11 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(licensePlateLabel)
                     .addComponent(licensePlateNumberTF, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                .addGap(5, 5, 5)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -349,7 +379,7 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Search person", jPanel2);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Police admin work area");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -357,14 +387,13 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(295, 295, 295)
-                        .addComponent(jLabel1)))
+                .addGap(36, 36, 36)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 682, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(238, 238, 238))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,7 +402,7 @@ public class PoliceAdminWorkArea extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

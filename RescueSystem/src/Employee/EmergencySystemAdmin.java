@@ -7,7 +7,7 @@ package Employee;
 
 /**
  *
- * @author Msanskruti
+ * @author shrutisen
  */
 public class EmergencySystemAdmin extends Employee {
     

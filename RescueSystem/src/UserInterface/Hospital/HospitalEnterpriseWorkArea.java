@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.Hospital;
+package UserInterface.Hospital;
 
 import EmergencySystem.Emergency.Emergency;
 import EmergencySystem.EmergencySystem;
@@ -29,7 +29,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ishaansamel
+ * @author Msanskruti
  */
 public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
 
@@ -218,10 +218,17 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         specialityErr = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        header.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        setBackground(new java.awt.Color(220, 234, 234));
+
+        header.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         header.setText("Hospital Enterprise Admin Work Area");
 
+        enterpriseWorkArea.setBackground(new java.awt.Color(102, 0, 0));
+        enterpriseWorkArea.setForeground(new java.awt.Color(255, 255, 255));
+
+        workQueue.setBackground(new java.awt.Color(102, 0, 0));
         workQueue.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        workQueue.setForeground(new java.awt.Color(255, 255, 255));
 
         emergencyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -254,7 +261,7 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         }
 
         processEmergencyBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        processEmergencyBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Hospital/images/1449792327_process.png"))); // NOI18N
+        processEmergencyBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Hospital/images/1449792327_process.png"))); // NOI18N
         processEmergencyBtn.setText("Process the emergency");
         processEmergencyBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,7 +295,9 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
 
         enterpriseWorkArea.addTab("Work queue", workQueue);
 
+        alertAmbulance.setBackground(new java.awt.Color(102, 0, 0));
         alertAmbulance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        alertAmbulance.setForeground(new java.awt.Color(255, 255, 255));
 
         ambulanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -309,7 +318,7 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         jScrollPane2.setViewportView(ambulanceTable);
 
         alertambulanceBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        alertambulanceBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Hospital/images/1449793544_ambulance.png"))); // NOI18N
+        alertambulanceBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Hospital/images/1449793544_ambulance.png"))); // NOI18N
         alertambulanceBtn.setText("Alert ambulance");
         alertambulanceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,9 +351,13 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
 
         enterpriseWorkArea.addTab("Alert Ambulance", alertAmbulance);
 
+        manageOrgPanel.setBackground(new java.awt.Color(102, 0, 0));
         manageOrgPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        manageOrgPanel.setForeground(new java.awt.Color(255, 255, 255));
 
-        organisationLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        organisationLabel.setBackground(new java.awt.Color(102, 0, 0));
+        organisationLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        organisationLabel.setForeground(new java.awt.Color(255, 255, 255));
         organisationLabel.setText("Organisation");
 
         organisationCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -355,7 +368,7 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         });
 
         addOrgBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        addOrgBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Hospital/images/1449768059_More.png"))); // NOI18N
+        addOrgBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Hospital/images/1449768059_More.png"))); // NOI18N
         addOrgBtn.setText("Add Organisation");
         addOrgBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -381,13 +394,19 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         });
         organisationTable.setViewportView(hosptOrganisationTable);
 
-        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        nameLabel.setBackground(new java.awt.Color(102, 0, 0));
+        nameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(255, 255, 255));
         nameLabel.setText("Name:");
 
-        usernameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        usernameLabel.setBackground(new java.awt.Color(102, 0, 0));
+        usernameLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        usernameLabel.setForeground(new java.awt.Color(255, 255, 255));
         usernameLabel.setText("Username:");
 
-        passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        passwordLabel.setBackground(new java.awt.Color(102, 0, 0));
+        passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
         passwordLabel.setText("Password:");
 
         nameTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -403,7 +422,7 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         });
 
         createEmployee.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        createEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Hospital/images/1449791895_user_male2.png"))); // NOI18N
+        createEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Hospital/images/1449791895_user_male2.png"))); // NOI18N
         createEmployee.setText("Create employee");
         createEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,7 +445,9 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         passwordErr.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         passwordErr.setForeground(new java.awt.Color(102, 102, 102));
 
-        availabilityLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        availabilityLabel.setBackground(new java.awt.Color(102, 0, 0));
+        availabilityLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        availabilityLabel.setForeground(new java.awt.Color(255, 255, 255));
         availabilityLabel.setText("Availability:");
 
         availabilityTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -438,7 +459,9 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         availErr.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         availErr.setForeground(new java.awt.Color(102, 102, 102));
 
-        specialityLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        specialityLabel.setBackground(new java.awt.Color(102, 0, 0));
+        specialityLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        specialityLabel.setForeground(new java.awt.Color(255, 255, 255));
         specialityLabel.setText("Speciality:");
 
         specialityTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -561,14 +584,13 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(header))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(enterpriseWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(46, 46, 46)
+                .addComponent(enterpriseWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(header)
+                .addGap(142, 142, 142))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,7 +599,7 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
                 .addComponent(header)
                 .addGap(18, 18, 18)
                 .addComponent(enterpriseWorkArea, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -825,7 +847,7 @@ public class HospitalEnterpriseWorkArea extends javax.swing.JPanel {
         }
         
         else{
-        JOptionPane.showMessageDialog(this,"Choose a ambulance from the table");
+        JOptionPane.showMessageDialog(this,"Choose an ambulance from the table");
         }
     }//GEN-LAST:event_alertambulanceBtnActionPerformed
 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.Hospital;
+package UserInterface.Hospital;
 
 import EmergencySystem.Emergency.Emergency;
 import EmergencySystem.EmergencySystem;
@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ishaansamel
+ * @author Msanskruti
  */
 public class DoctorWorkArea extends javax.swing.JPanel {
 
@@ -78,12 +78,15 @@ public class DoctorWorkArea extends javax.swing.JPanel {
         emergencyTable = new javax.swing.JTable();
         connectToPatientBtn = new javax.swing.JButton();
 
-        header.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        setBackground(new java.awt.Color(220, 234, 234));
+
+        header.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         header.setText("Doctor work area");
 
         emergencyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
                 "Sender", "Location of emergency", "Nature of emergency", "Description"
@@ -104,7 +107,9 @@ public class DoctorWorkArea extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        emergencyTable.setColumnSelectionAllowed(true);
         jScrollPane1.setViewportView(emergencyTable);
+        emergencyTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (emergencyTable.getColumnModel().getColumnCount() > 0) {
             emergencyTable.getColumnModel().getColumn(1).setMinWidth(300);
             emergencyTable.getColumnModel().getColumn(1).setPreferredWidth(300);
@@ -112,7 +117,7 @@ public class DoctorWorkArea extends javax.swing.JPanel {
         }
 
         connectToPatientBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        connectToPatientBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Hospital/images/1449794157_video-camera.png"))); // NOI18N
+        connectToPatientBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Hospital/images/1449794157_video-camera.png"))); // NOI18N
         connectToPatientBtn.setText("Connect to the patient");
         connectToPatientBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,14 +132,14 @@ public class DoctorWorkArea extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(header))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(278, 278, 278)
-                        .addComponent(connectToPatientBtn)))
+                        .addComponent(connectToPatientBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(header)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -146,49 +151,18 @@ public class DoctorWorkArea extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(connectToPatientBtn)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void connectToPatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectToPatientBtnActionPerformed
         // TODO add your handling code here:
-        
-        int row=emergencyTable.getSelectedRow();
-//        if(row>=0)
-//        {
-//            Emergency emg=(Emergency) emergencyTable.getValueAt(row, 1);
-//            Date d=new Date();
-//            emg.setOnCallDoctorIsConnectedViaCamera(d);
-//         
-//            emg.setTotalTimeForDoctorToGetComnnected((emg.getOnCallDoctorIsConnectedViaCamera().getTime()-emg.getAlertOnCallDoctor().getTime())/1000%60);
-//            System.err.println("the time when doc was alerted to doc was connected"+emg.getTotalTimeForDoctorToGetComnnected());
-//            Thread webcam=new Thread()
-//            {
-//            public void run()
-//            {
-//                
-//                CvCapture capture =opencv_highgui.cvCreateCameraCapture(0);
-//                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_HEIGHT,500);
-//                opencv_highgui.cvSetCaptureProperty(capture, opencv_highgui.CV_CAP_PROP_FRAME_WIDTH,580);
-//                IplImage grabbedImage=opencv_highgui.cvQueryFrame(capture);
-//                CanvasFrame frame=new CanvasFrame("Webcamera");
-//                while(frame.isVisible()&& (grabbedImage=opencv_highgui.cvQueryFrame(capture))!=null)
-//                {
-//                    frame.showImage(grabbedImage);
-//                    emg.setEmergencyStatus("Doctor connected to the camera");
-//                    
-//                }
-//            }
-//        };
-//        webcam.start();
-//            
-//            
-//        }
-//        
-//        else
-//        {
-//            JOptionPane.showMessageDialog(this, "Choose an emergency from the table");
-//        }
+        JOptionPane.showMessageDialog(
+        this, // Reference to the parent component (use 'this' if it's part of a JFrame or JDialog)
+        "You will be connected to the patient via webcam in the next 2 minutes 15 seconds.", // Message
+        "Connecting...", // Title of the dialog
+        JOptionPane.INFORMATION_MESSAGE // Type of message
+    );
         
      
     }//GEN-LAST:event_connectToPatientBtnActionPerformed

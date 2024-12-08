@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.Drone;
+package UserInterface.Drone;
 
 import EmergencySystem.Emergency.Emergency;
 import EmergencySystem.EmergencySystem;
@@ -52,6 +52,9 @@ public class DroneWorkArea extends javax.swing.JPanel {
     private WorkRequest request;
     private boolean view=false;
     private boolean licenPlateCaptured=false;
+    private boolean flag=false;
+    
+    
     public DroneWorkArea(JPanel userProcessContainer, UserAccount account, EmergencySystem system, Network network) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
@@ -128,7 +131,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
             
         //    System.err.println("the hospital location is "+hospitalLocation);
             
-            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+emergencyLocation+"&destinations="+hospitalLocation+"&key=AIzaSyAUftFKfNIO2RI64ZJM0joAG6Xtnolpc_8");
+            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+emergencyLocation+"&destinations="+hospitalLocation+"&key=AIzaSyD8bhPl4z1ETG7_FySpu3zWZSMAIsWpdgU");
            
             //System.out.println("the url is "+url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -222,7 +225,6 @@ public class DroneWorkArea extends javax.swing.JPanel {
     public void populateTable()
             
     {
-         
         DefaultTableModel model = (DefaultTableModel) emergencyTable.getModel();
         
         model.setRowCount(0);
@@ -230,7 +232,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
         for (WorkRequest workRequest:account.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[4];
             row[0]=  workRequest;
-            
+           
             row[1] = ((Emergency911DepartmentWorkRequest) workRequest).getEmergency();
             row[2] = ((Emergency911DepartmentWorkRequest) workRequest).getEmergency().getNatureOfEmergency();
             row[3]= ((Emergency911DepartmentWorkRequest) workRequest).getEmergency().getPriority();
@@ -271,7 +273,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
             
         //    System.err.println("the hospital location is "+hospitalLocation);
             
-            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+emergencyLocation+"&destinations="+hospitalLocation+"&key=AIzaSyAUftFKfNIO2RI64ZJM0joAG6Xtnolpc_8");
+            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+emergencyLocation+"&destinations="+hospitalLocation+"&key=AIzaSyD8bhPl4z1ETG7_FySpu3zWZSMAIsWpdgU");
            
             //System.out.println("the url is "+url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -398,9 +400,9 @@ public class DroneWorkArea extends javax.swing.JPanel {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        processBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         emergencyTable = new javax.swing.JTable();
-        processBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         hospitalTable = new javax.swing.JTable();
@@ -417,7 +419,22 @@ public class DroneWorkArea extends javax.swing.JPanel {
         alertPoliceBtn = new javax.swing.JButton();
         header = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(220, 234, 234));
+
+        jTabbedPane1.setBackground(new java.awt.Color(102, 0, 0));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        processBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        processBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Drone/Images/1449792327_process.png"))); // NOI18N
+        processBtn.setText("Process the work request");
+        processBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processBtnActionPerformed(evt);
+            }
+        });
 
         emergencyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -430,40 +447,32 @@ public class DroneWorkArea extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
-        jScrollPane1.setViewportView(emergencyTable);
-        if (emergencyTable.getColumnModel().getColumnCount() > 0) {
-            emergencyTable.getColumnModel().getColumn(1).setMinWidth(250);
-            emergencyTable.getColumnModel().getColumn(1).setPreferredWidth(250);
-            emergencyTable.getColumnModel().getColumn(1).setMaxWidth(250);
-        }
 
-        processBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        processBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Drone/Images/1449792327_process.png"))); // NOI18N
-        processBtn.setText("Process the work request");
-        processBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                processBtnActionPerformed(evt);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
+        jScrollPane1.setViewportView(emergencyTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(processBtn)
-                        .addGap(260, 260, 260))))
+                .addContainerGap(262, Short.MAX_VALUE)
+                .addComponent(processBtn)
+                .addGap(260, 260, 260))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,6 +486,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Work requests", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(102, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         hospitalTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -504,8 +514,9 @@ public class DroneWorkArea extends javax.swing.JPanel {
         }
 
         viewDetailsButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        viewDetailsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Drone/Images/1449768059_More.png"))); // NOI18N
+        viewDetailsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Drone/Images/1449768059_More.png"))); // NOI18N
         viewDetailsButton.setText("View additional details");
+        viewDetailsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         viewDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewDetailsButtonActionPerformed(evt);
@@ -513,7 +524,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
         });
 
         alertHospitalBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        alertHospitalBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Drone/Images/1449793374_architecture-interior-07.png"))); // NOI18N
+        alertHospitalBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Drone/Images/1449793374_architecture-interior-07.png"))); // NOI18N
         alertHospitalBtn.setText("Alert the hospital");
         alertHospitalBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -566,11 +577,13 @@ public class DroneWorkArea extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(otherHospitalsTable);
 
-        networkL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        networkL.setBackground(new java.awt.Color(102, 0, 0));
+        networkL.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        networkL.setForeground(new java.awt.Color(255, 255, 255));
         networkL.setText("Network:");
 
         alertDoctorBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        alertDoctorBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Drone/Images/1449793724_doctor.png"))); // NOI18N
+        alertDoctorBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Drone/Images/1449793724_doctor.png"))); // NOI18N
         alertDoctorBtn.setText("Alert the on call doctor");
         alertDoctorBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -579,7 +592,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
         });
 
         captureLicenceBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        captureLicenceBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Drone/Images/1449793516_device-camera-capture-photo-glyph.png"))); // NOI18N
+        captureLicenceBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Drone/Images/1449793516_device-camera-capture-photo-glyph.png"))); // NOI18N
         captureLicenceBtn.setText("Capture license plate");
         captureLicenceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -588,7 +601,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
         });
 
         alertPoliceBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        alertPoliceBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Drone/Images/1449793570_police.png"))); // NOI18N
+        alertPoliceBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Drone/Images/1449793570_police.png"))); // NOI18N
         alertPoliceBtn.setText("Alert the police");
         alertPoliceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -658,7 +671,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Find and alert hospitals", jPanel2);
 
-        header.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        header.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         header.setText("Drone work area");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -671,7 +684,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
                         .addGap(39, 39, 39)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(315, 315, 315)
+                        .addGap(284, 284, 284)
                         .addComponent(header)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
@@ -682,7 +695,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
                 .addComponent(header)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -721,7 +734,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
                                                    // System.out.println("the time taken to reach the dest is less than 10"+h.getTimeTakenToReachTheAccidentLoc());
                                                     hospInSameNetwork.add(h);
                                                    // hospitalWithSpeciality.setText("The hospital "+h.getHospitalName()+" in "+network.getNetworkName()+"network takes "+h.getTimeTakenToReachTheAccidentLoc()+" minutes to reach the emergency");
-                                                    JOptionPane.showMessageDialog(this, "The hospital "+h.getHospitalName()+" in "+network.getNetworkName()+"network takes "+h.getTimeTakenToReachTheAccidentLoc()+" minutes to reach the emergency");
+                                                    JOptionPane.showMessageDialog(this, "The hospital "+h.getHospitalName()+" in "+network.getNetworkName()+"network takes "+h.getTimeTakenToReachTheAccidentLoc()+" minutes to reach the emergency. ");
                                                     break;
                                                 }
                                                 
@@ -735,7 +748,7 @@ public class DroneWorkArea extends javax.swing.JPanel {
                                                             //System.err.println("other hospitals time which is less than 10 "+h1.getTimeTakenToReachTheAccidentLoc());
                                                              hospInSameNetwork.add(h1);
                                                            //  hospitalWithSpeciality.setText("The hospital is more than 10 minutes away,alert another hospital"+ h1.getHospitalName()+" which takes "+h1.getTimeTakenToReachTheAccidentLoc()+" minutes.");
-                                                             JOptionPane.showMessageDialog(this, "The hospital is more than 10 minutes away,alert another hospital"+ h1.getHospitalName()+" which takes "+h1.getTimeTakenToReachTheAccidentLoc()+" minutes.");
+                                                             JOptionPane.showMessageDialog(this, "The hospital is more than 10 minutes away,alert another hospital - "+ h1.getHospitalName()+" which takes "+h1.getTimeTakenToReachTheAccidentLoc()+" minutes.");
                                                              break;
                                                         }
                                                         
@@ -1847,44 +1860,6 @@ public class DroneWorkArea extends javax.swing.JPanel {
     }//GEN-LAST:event_viewDetailsButtonActionPerformed
 
    
-    private void processBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processBtnActionPerformed
-        // TODO add your handling code here:
-        
-        
-        int rowSelected=emergencyTable.getSelectedRow();
-        if(rowSelected>=0)
-        {
-            Emergency emg=(Emergency) emergencyTable.getValueAt(rowSelected,1);
-            if(emg.getNatureOfEmergency().equalsIgnoreCase("Accident Emergency"))
-            {
-                
-                populateHospitalTable();
-                JOptionPane.showMessageDialog(this,"Choose the hospital and alert them");
-                
-                
-                viewButtons(true);
-                captureLicenceBtn.setEnabled(true);
-                alertPoliceBtn.setEnabled(true);
-            }
-            
-            else
-            {
-               
-                populateHospitalTable();
-                JOptionPane.showMessageDialog(this,"Choose the hospital and alert them");
-                viewButtons(true);
-                 captureLicenceBtn.setEnabled(false);
-                alertPoliceBtn.setEnabled(false);
-            }
-        }
-        
-        else
-        {
-            JOptionPane.showMessageDialog(this,"Choose an emergency form the table");
-        }
-        
-    }//GEN-LAST:event_processBtnActionPerformed
-
     private void networkComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkComboActionPerformed
         // TODO add your handling code here:
         Network n=(Network) networkCombo.getSelectedItem();
@@ -2337,6 +2312,8 @@ public class DroneWorkArea extends javax.swing.JPanel {
      
     }//GEN-LAST:event_captureLicenceBtnActionPerformed
 
+    
+
     private void alertPoliceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alertPoliceBtnActionPerformed
         // TODO add your handling code here:
         
@@ -2380,6 +2357,41 @@ public class DroneWorkArea extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"Choose an emergency from the table");
         }
     }//GEN-LAST:event_alertPoliceBtnActionPerformed
+
+    private void processBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processBtnActionPerformed
+        // TODO add your handling code here:
+
+        int rowSelected=emergencyTable.getSelectedRow();
+        if(rowSelected>=0)
+        {
+            Emergency emg=(Emergency) emergencyTable.getValueAt(rowSelected,1);
+            if(emg.getNatureOfEmergency().equalsIgnoreCase("Accident Emergency"))
+            {
+
+                populateHospitalTable();
+                JOptionPane.showMessageDialog(this,"Choose the hospital and alert them");
+
+                viewButtons(true);
+                captureLicenceBtn.setEnabled(true);
+                alertPoliceBtn.setEnabled(true);
+            }
+
+            else
+            {
+
+                populateHospitalTable();
+                JOptionPane.showMessageDialog(this,"Choose the hospital and alert them");
+                viewButtons(true);
+                captureLicenceBtn.setEnabled(false);
+                alertPoliceBtn.setEnabled(false);
+            }
+        }
+
+        else
+        {
+            JOptionPane.showMessageDialog(this,"Choose an emergency form the table");
+        }
+    }//GEN-LAST:event_processBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

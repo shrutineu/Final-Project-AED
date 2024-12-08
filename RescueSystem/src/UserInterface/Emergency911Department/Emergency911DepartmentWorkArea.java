@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.emergency911;
+package UserInterface.Emergency911Department;
 
 
 
@@ -35,9 +35,9 @@ import org.json.JSONObject;
 
 /**
  *
- * @author Msanskruti
+ * @author shrutisen
  */
-public class emergency911WorkArea extends javax.swing.JPanel {
+public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
 
     /**
      * Creates new form Emergency911DepartmentWorkArea
@@ -58,7 +58,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         
     private boolean droneHasUserName;
    
-    public emergency911WorkArea(JPanel userProcessContainer,UserAccount account, EmergencySystem emergencysystem, Network network, Enterprise enterprise) {
+    public Emergency911DepartmentWorkArea(JPanel userProcessContainer,UserAccount account, EmergencySystem emergencysystem, Network network, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.emergencysystem=emergencysystem;
@@ -158,7 +158,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         
         for (WorkRequest workRequest:account.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[4];
-            row[0]=  workRequest;
+            row[0]=  workRequest.getSender();
            
             row[1] = ((Emergency911DepartmentWorkRequest) workRequest).getEmergency();
             row[2] = ((Emergency911DepartmentWorkRequest) workRequest).getEmergency().getNatureOfEmergency();
@@ -230,7 +230,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             try
             {
             location=emerg.getLocationOfEmergency().replaceAll("\\s","");
-            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+location+"&destinations=24+Beacon+St,+Boston,+MA+01233|4+Yawkey+Way,+Boston,+MA+02215|300+Fenway,+Boston,+MA+02115&key=AIzaSyAUftFKfNIO2RI64ZJM0joAG6Xtnolpc_8");
+            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins="+location+"&destinations=24+Beacon+St,+Boston,+MA+01233|4+Yawkey+Way,+Boston,+MA+02215|300+Fenway,+Boston,+MA+02115&key=AIzaSyD8bhPl4z1ETG7_FySpu3zWZSMAIsWpdgU");
            
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -430,13 +430,20 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         userIdErr = new javax.swing.JLabel();
         passwordErr = new javax.swing.JLabel();
 
-        header.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        header.setText("Emergency 911 department work area");
+        setBackground(new java.awt.Color(220, 234, 234));
 
-        subHeader.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        header.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        header.setText("Emergency 911 Department ");
+
+        subHeader.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         subHeader.setText("Public Safety Dispatch Center");
 
+        jTabbedPane1.setBackground(new java.awt.Color(102, 0, 0));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        emergencyListPanel.setBackground(new java.awt.Color(102, 0, 0));
         emergencyListPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        emergencyListPanel.setForeground(new java.awt.Color(255, 255, 255));
 
         emergencyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -469,7 +476,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         }
 
         processTheEmrgBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        processTheEmrgBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449792327_process.png"))); // NOI18N
+        processTheEmrgBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Emergency911Department/images/1449792327_process.png"))); // NOI18N
         processTheEmrgBtn.setText("Process the emergency");
         processTheEmrgBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -477,19 +484,29 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             }
         });
 
+        emergencyLocationLabel.setBackground(new java.awt.Color(102, 0, 0));
         emergencyLocationLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        emergencyLocationLabel.setForeground(new java.awt.Color(255, 255, 255));
         emergencyLocationLabel.setText("Emergency location:");
 
+        natureOfEmergencyLabel.setBackground(new java.awt.Color(102, 0, 0));
         natureOfEmergencyLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        natureOfEmergencyLabel.setForeground(new java.awt.Color(255, 255, 255));
         natureOfEmergencyLabel.setText("Nature of emergency:");
 
+        timeRecorderLabel.setBackground(new java.awt.Color(102, 0, 0));
         timeRecorderLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        timeRecorderLabel.setForeground(new java.awt.Color(255, 255, 255));
         timeRecorderLabel.setText("Time at which emergency was recorded:");
 
+        desciptionLabel.setBackground(new java.awt.Color(102, 0, 0));
         desciptionLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        desciptionLabel.setForeground(new java.awt.Color(255, 255, 255));
         desciptionLabel.setText("Description:");
 
+        phoneNumberLabel.setBackground(new java.awt.Color(102, 0, 0));
         phoneNumberLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        phoneNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
         phoneNumberLabel.setText("Phone number of caller:");
 
         emergencyLocationTF.setEnabled(false);
@@ -569,7 +586,9 @@ public class emergency911WorkArea extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Emergency list", emergencyListPanel);
 
+        alertTheDRonePanel.setBackground(new java.awt.Color(102, 0, 0));
         alertTheDRonePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        alertTheDRonePanel.setForeground(new java.awt.Color(255, 255, 255));
 
         droneTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -604,7 +623,9 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             }
         });
 
+        emgLocLabel.setBackground(new java.awt.Color(102, 0, 0));
         emgLocLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        emgLocLabel.setForeground(null);
         emgLocLabel.setText("Emergency location:");
 
         emergencylocCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -617,7 +638,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         closestDroneStation.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
         showDroneBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        showDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449793043_Paper_Plane.png"))); // NOI18N
+        showDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Emergency911Department/images/1449793043_Paper_Plane.png"))); // NOI18N
         showDroneBtn.setText("Show drone");
         showDroneBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -651,7 +672,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         jScrollPane4.setViewportView(droneStationTable);
 
         showActiveDroneBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        showActiveDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449792985_Paper-Plane.png"))); // NOI18N
+        showActiveDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Emergency911Department/images/1449792985_Paper-Plane.png"))); // NOI18N
         showActiveDroneBtn.setText("Show active drones");
         showActiveDroneBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -659,22 +680,28 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             }
         });
 
+        displacementLabel.setBackground(new java.awt.Color(102, 0, 0));
         displacementLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        displacementLabel.setForeground(null);
         displacementLabel.setText("Displacement to reach the accidental location:");
 
+        inKmsLabel.setBackground(new java.awt.Color(102, 0, 0));
         inKmsLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        inKmsLabel.setForeground(new java.awt.Color(102, 102, 102));
+        inKmsLabel.setForeground(null);
         inKmsLabel.setText("in kms");
 
+        timeLable.setBackground(new java.awt.Color(102, 0, 0));
         timeLable.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        timeLable.setForeground(null);
         timeLable.setText("Time required to reach the accidental location:");
 
+        inSecLabel.setBackground(new java.awt.Color(102, 0, 0));
         inSecLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        inSecLabel.setForeground(new java.awt.Color(102, 102, 102));
+        inSecLabel.setForeground(null);
         inSecLabel.setText("in seconds");
 
         calBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        calBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449792431_cloud-calculator.png"))); // NOI18N
+        calBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Emergency911Department/images/1449792431_cloud-calculator.png"))); // NOI18N
         calBtn.setText("Calculate");
         calBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -748,7 +775,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
                     .addComponent(displacementLabel)
                     .addComponent(displacementTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inKmsLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(alertTheDRonePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inSecLabel)
@@ -766,11 +793,20 @@ public class emergency911WorkArea extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Alert the drone", alertTheDRonePanel);
 
+        manageDroneStations.setBackground(new java.awt.Color(102, 0, 0));
         manageDroneStations.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        manageDroneStations.setForeground(new java.awt.Color(255, 255, 255));
 
+        createDrone.setBackground(new java.awt.Color(102, 0, 0));
+        createDrone.setForeground(new java.awt.Color(255, 255, 255));
+
+        createDroneStationPanel.setBackground(new java.awt.Color(102, 0, 0));
         createDroneStationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        createDroneStationPanel.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel9.setBackground(new java.awt.Color(102, 0, 0));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Create drone stations");
 
         dsTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -791,14 +827,18 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(dsTable);
 
+        jLabel8.setBackground(new java.awt.Color(102, 0, 0));
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Drone station name:");
 
+        jLabel10.setBackground(new java.awt.Color(102, 0, 0));
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Drone station address:");
 
         addDroneStnBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        addDroneStnBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449768059_More.png"))); // NOI18N
+        addDroneStnBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Emergency911Department/images/1449768059_More.png"))); // NOI18N
         addDroneStnBtn.setText("Add drone station");
         addDroneStnBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -889,9 +929,13 @@ public class emergency911WorkArea extends javax.swing.JPanel {
 
         createDrone.addTab("Create Drone Stations", createDroneStationPanel);
 
+        createDronePanel.setBackground(new java.awt.Color(102, 0, 0));
         createDronePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        createDronePanel.setForeground(new java.awt.Color(255, 255, 255));
 
+        droneStnLabel.setBackground(new java.awt.Color(102, 0, 0));
         droneStnLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        droneStnLabel.setForeground(new java.awt.Color(255, 255, 255));
         droneStnLabel.setText("Drone station:");
 
         droneStnCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -926,7 +970,9 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         });
         jScrollPane5.setViewportView(dronedetailsTable);
 
+        droneIdLabel.setBackground(new java.awt.Color(102, 0, 0));
         droneIdLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        droneIdLabel.setForeground(new java.awt.Color(255, 255, 255));
         droneIdLabel.setText("Drone id:");
 
         droneIdTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -936,7 +982,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         });
 
         addDroneBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        addDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1449768059_More.png"))); // NOI18N
+        addDroneBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Emergency911Department/images/1449768059_More.png"))); // NOI18N
         addDroneBtn.setText("Add drone");
         addDroneBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -944,10 +990,14 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             }
         });
 
+        userIdLabel.setBackground(new java.awt.Color(102, 0, 0));
         userIdLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        userIdLabel.setForeground(new java.awt.Color(255, 255, 255));
         userIdLabel.setText("UserId:");
 
+        passwordLabel.setBackground(new java.awt.Color(102, 0, 0));
         passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
         passwordLabel.setText("Password:");
 
         droneUserIdTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -957,7 +1007,7 @@ public class emergency911WorkArea extends javax.swing.JPanel {
         });
 
         createUserAccountBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        createUserAccountBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergency911/images/1447997078_user.png"))); // NOI18N
+        createUserAccountBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Emergency911Department/images/1447997078_user.png"))); // NOI18N
         createUserAccountBtn.setText("Create user account");
         createUserAccountBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1083,11 +1133,11 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(header))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(289, 289, 289)
-                        .addComponent(subHeader)))
+                        .addComponent(subHeader))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(header)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -1095,11 +1145,11 @@ public class emergency911WorkArea extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(header)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(subHeader)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

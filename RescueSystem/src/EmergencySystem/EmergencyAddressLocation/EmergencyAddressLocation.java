@@ -8,7 +8,7 @@ package EmergencySystem.EmergencyAddressLocation;
 
 /**
  *
- * @author shrutisen
+ * @author ishaansamel
  */
 public class EmergencyAddressLocation {
     private String address;

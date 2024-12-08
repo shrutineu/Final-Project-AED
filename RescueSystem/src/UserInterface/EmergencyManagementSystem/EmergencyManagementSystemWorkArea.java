@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.emergencymanagementsystem;
+package UserInterface.EmergencyManagementSystem;
 
 import Employee.EnterpriseAdmin;
 import Employee.HospitalEnterpriseAdmin;
@@ -48,7 +48,7 @@ import org.json.JSONObject;
  *
  * @author ishaansamel
  */
-public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
+public class EmergencyManagementSystemWorkArea extends javax.swing.JPanel  {
 
     /**
      * Creates new form EmergencyManagementSystemWorkArea
@@ -65,7 +65,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
     private boolean entUsernameIsUnique;
    
     private UserAccount userAccount;
-    public emergencymanagementsystemWorkArea(JPanel userProcessContainer, EmergencySystem system, UserAccount userAccount)
+    public EmergencyManagementSystemWorkArea(JPanel userProcessContainer, EmergencySystem system, UserAccount userAccount)
     {
         initComponents();
         this.userProcessContainer=userProcessContainer;
@@ -428,23 +428,37 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         userNaemErr = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(220, 234, 234));
         setPreferredSize(new java.awt.Dimension(779, 671));
 
-        header.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        header.setText("Emergency Management System Admin Work Area");
+        header.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        header.setText("Emergency Management System Admin");
 
+        jTabbedPane1.setBackground(new java.awt.Color(102, 0, 0));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        pickTheCall.setBackground(new java.awt.Color(102, 0, 0));
         pickTheCall.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pickTheCall.setForeground(new java.awt.Color(255, 255, 255));
 
+        emergencyLocation.setBackground(new java.awt.Color(102, 0, 0));
         emergencyLocation.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        emergencyLocation.setForeground(new java.awt.Color(255, 255, 255));
         emergencyLocation.setText("Location of the emergency:");
 
+        phoneNumberOfCaller.setBackground(new java.awt.Color(102, 0, 0));
         phoneNumberOfCaller.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        phoneNumberOfCaller.setForeground(new java.awt.Color(255, 255, 255));
         phoneNumberOfCaller.setText("Phone number of the caller:");
 
+        natureOfEmergency.setBackground(new java.awt.Color(102, 0, 0));
         natureOfEmergency.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        natureOfEmergency.setForeground(new java.awt.Color(255, 255, 255));
         natureOfEmergency.setText("Nature of the emergency: ");
 
+        description.setBackground(new java.awt.Color(102, 0, 0));
         description.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        description.setForeground(new java.awt.Color(255, 255, 255));
         description.setText("Description:");
 
         locationEmergencyTF.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -454,7 +468,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         callerPhoneNumberErr.setForeground(new java.awt.Color(102, 102, 102));
 
         reportAnEmergencyBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        reportAnEmergencyBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449767337_09.png"))); // NOI18N
+        reportAnEmergencyBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449767337_09.png"))); // NOI18N
         reportAnEmergencyBtn.setText("Report an emergency");
         reportAnEmergencyBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -462,9 +476,13 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
             }
         });
 
+        priorityLabel.setBackground(new java.awt.Color(102, 0, 0));
         priorityLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        priorityLabel.setForeground(new java.awt.Color(255, 255, 255));
         priorityLabel.setText("Priority:");
 
+        prioritySlider.setBackground(new java.awt.Color(102, 0, 0));
+        prioritySlider.setForeground(new java.awt.Color(255, 255, 255));
         prioritySlider.setMajorTickSpacing(1);
         prioritySlider.setMaximum(10);
         prioritySlider.setMinorTickSpacing(1);
@@ -498,25 +516,24 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
                                 .addComponent(priorityLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(description, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))
                         .addGap(42, 42, 42)
-                        .addGroup(pickTheCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(locationEmergencyTF, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pickTheCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(locationErr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(pickTheCallLayout.createSequentialGroup()
-                                    .addComponent(prioritySlider, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(descriptionErr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pickTheCallLayout.createSequentialGroup()
-                                    .addComponent(descriptionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(natureOfemergencyErr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addComponent(natureOfEmergencyCombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(callerPhoneNumberErr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(callersPhoneNumberTF, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGroup(pickTheCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(locationErr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(pickTheCallLayout.createSequentialGroup()
+                                .addComponent(prioritySlider, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(descriptionErr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pickTheCallLayout.createSequentialGroup()
+                                .addComponent(descriptionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(natureOfemergencyErr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(natureOfEmergencyCombo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(callerPhoneNumberErr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(callersPhoneNumberTF, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(locationEmergencyTF)))
                     .addGroup(pickTheCallLayout.createSequentialGroup()
                         .addGap(221, 221, 221)
                         .addComponent(reportAnEmergencyBtn)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         pickTheCallLayout.setVerticalGroup(
             pickTheCallLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -565,7 +582,9 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
 
         jTabbedPane1.addTab("Pick the call", pickTheCall);
 
+        search911Dept.setBackground(new java.awt.Color(102, 0, 0));
         search911Dept.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        search911Dept.setForeground(new java.awt.Color(255, 255, 255));
 
         networkTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -593,7 +612,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         table.setViewportView(networkTable);
 
         findTheDistBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        findTheDistBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449767706_search.png"))); // NOI18N
+        findTheDistBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449767706_search.png"))); // NOI18N
         findTheDistBtn.setText("Find the distance");
         findTheDistBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -602,18 +621,21 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         });
 
         bostonDitsLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        bostonDitsLabel.setForeground(new java.awt.Color(255, 255, 255));
         bostonDitsLabel.setText("Distance of emergency location from Boston PSAP:");
 
         camDistLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        camDistLabel.setForeground(new java.awt.Color(255, 255, 255));
         camDistLabel.setText("Distance of emergency location from Cambridge PSAP:");
 
         maldenDistLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        maldenDistLabel.setForeground(new java.awt.Color(255, 255, 255));
         maldenDistLabel.setText("Distance of emergency location from Malden PSAP:");
 
         closestPSAPLabel.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
 
         routeCallBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        routeCallBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449767932_129_ArrowRight.png"))); // NOI18N
+        routeCallBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449767932_129_ArrowRight.png"))); // NOI18N
         routeCallBtn.setText("Route the call to the PSAP");
         routeCallBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -680,9 +702,16 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
 
         jTabbedPane1.addTab("Search for the 911 departments", search911Dept);
 
+        manageEmergencySystem.setBackground(new java.awt.Color(102, 0, 0));
         manageEmergencySystem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        manageEmergencySystem.setForeground(new java.awt.Color(102, 0, 0));
 
+        managedEmeregencyPanel.setBackground(new java.awt.Color(102, 0, 0));
+        managedEmeregencyPanel.setForeground(new java.awt.Color(255, 255, 255));
+
+        createNetworkPanel.setBackground(new java.awt.Color(102, 0, 0));
         createNetworkPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        createNetworkPanel.setForeground(new java.awt.Color(102, 0, 0));
 
         addNetworkTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -703,6 +732,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         networkTab.setViewportView(addNetworkTable);
 
         networkNameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        networkNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         networkNameLabel.setText("Network name:");
 
         networkNameTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -712,7 +742,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         });
 
         addNetworkBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        addNetworkBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449768059_More.png"))); // NOI18N
+        addNetworkBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449768059_More.png"))); // NOI18N
         addNetworkBtn.setText("Add network");
         addNetworkBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -762,7 +792,9 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
 
         managedEmeregencyPanel.addTab("Create networks", createNetworkPanel);
 
+        createHospitalPanel.setBackground(new java.awt.Color(102, 0, 0));
         createHospitalPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        createHospitalPanel.setForeground(new java.awt.Color(102, 0, 0));
 
         hospitalNameTF.setEnabled(false);
         hospitalNameTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -805,10 +837,11 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         });
 
         createHospitalHeader.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        createHospitalHeader.setForeground(new java.awt.Color(255, 255, 255));
         createHospitalHeader.setText("Create Hospitals");
 
         addHospitalBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        addHospitalBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449768059_More.png"))); // NOI18N
+        addHospitalBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449768059_More.png"))); // NOI18N
         addHospitalBtn.setText("Add hospital");
         addHospitalBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -817,21 +850,27 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         });
 
         hospitalNameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        hospitalNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         hospitalNameLabel.setText("Hospital Name:");
 
         hospitalAddressLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        hospitalAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
         hospitalAddressLabel.setText("Hospital Address:");
 
         specialityLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        specialityLabel.setForeground(new java.awt.Color(255, 255, 255));
         specialityLabel.setText("Speciality:");
 
         noOfBedsLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        noOfBedsLabel.setForeground(new java.awt.Color(255, 255, 255));
         noOfBedsLabel.setText("Number of beds:");
 
         numberOfEmptyBeds.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        numberOfEmptyBeds.setForeground(new java.awt.Color(255, 255, 255));
         numberOfEmptyBeds.setText("Number of empty beds:");
 
         networkLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        networkLabel.setForeground(new java.awt.Color(255, 255, 255));
         networkLabel.setText("Network:");
 
         netCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -945,7 +984,9 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
 
         managedEmeregencyPanel.addTab("Create Hospitals", createHospitalPanel);
 
+        createEnterprisePanel.setBackground(new java.awt.Color(102, 0, 0));
         createEnterprisePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        createEnterprisePanel.setForeground(new java.awt.Color(255, 255, 255));
 
         enterpriseTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -966,12 +1007,15 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         jScrollPane3.setViewportView(enterpriseTable);
 
         netLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        netLabel.setForeground(new java.awt.Color(255, 255, 255));
         netLabel.setText("Network:");
 
         entTypeLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        entTypeLabel.setForeground(new java.awt.Color(255, 255, 255));
         entTypeLabel.setText("Enterprise type:");
 
         entNameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        entNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         entNameLabel.setText("Enterprise Name:");
 
         entNameTf.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -984,7 +1028,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         });
 
         createEntBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        createEntBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449768059_More.png"))); // NOI18N
+        createEntBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449768059_More.png"))); // NOI18N
         createEntBtn.setText("Create Enterprise");
         createEntBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1016,6 +1060,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         });
 
         ent911AddressLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ent911AddressLabel.setForeground(new java.awt.Color(255, 255, 255));
         ent911AddressLabel.setText("911 Enterprise Address:");
 
         entNameErr.setBackground(new java.awt.Color(102, 102, 102));
@@ -1100,7 +1145,9 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
 
         managedEmeregencyPanel.addTab("Create enterprises", createEnterprisePanel);
 
+        createEntAdminPanel.setBackground(new java.awt.Color(102, 0, 0));
         createEntAdminPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        createEntAdminPanel.setForeground(new java.awt.Color(102, 0, 0));
 
         entAdminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1121,18 +1168,23 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         jScrollPane2.setViewportView(entAdminTable);
 
         netwrkL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        netwrkL.setForeground(new java.awt.Color(255, 255, 255));
         netwrkL.setText("Network:");
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("Enterprise:");
 
         entAdNameL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        entAdNameL.setForeground(new java.awt.Color(255, 255, 255));
         entAdNameL.setText("Name:");
 
         entAdminUserL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        entAdminUserL.setForeground(new java.awt.Color(255, 255, 255));
         entAdminUserL.setText("UserName:");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Password:");
 
         name_AdminTF.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1162,7 +1214,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         entAdminCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         createAdminButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        createAdminButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449791895_user_male2.png"))); // NOI18N
+        createAdminButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449791895_user_male2.png"))); // NOI18N
         createAdminButton.setText("Create admin");
         createAdminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1256,9 +1308,12 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
 
         managedEmeregencyPanel.addTab("Create enterprise admin", createEntAdminPanel);
 
+        createHospitalAdminPanel.setBackground(new java.awt.Color(102, 0, 0));
         createHospitalAdminPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        createHospitalAdminPanel.setForeground(new java.awt.Color(102, 0, 0));
 
         networkJLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        networkJLabel.setForeground(new java.awt.Color(255, 255, 255));
         networkJLabel.setText("Network");
 
         networkJCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -1292,12 +1347,15 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         }
 
         nameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(255, 255, 255));
         nameLabel.setText("Name:");
 
         userNameLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        userNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         userNameLabel.setText("Username:");
 
         passwordLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
         passwordLabel.setText("Password:");
 
         hospitalAdminName.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1324,7 +1382,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
         });
 
         createAdminBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        createAdminBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/emergencymanagementsystem/images/1449791895_user_male2.png"))); // NOI18N
+        createAdminBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/EmergencyManagementSystem/images/1449791895_user_male2.png"))); // NOI18N
         createAdminBtn.setText("Create Admin");
         createAdminBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1455,8 +1513,8 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
                 .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(header, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145))
+                .addComponent(header)
+                .addGap(148, 148, 148))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1465,7 +1523,7 @@ public class emergencymanagementsystemWorkArea extends javax.swing.JPanel  {
                 .addComponent(header)
                 .addGap(32, 32, 32)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

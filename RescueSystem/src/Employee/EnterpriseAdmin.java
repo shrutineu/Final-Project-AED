@@ -11,7 +11,7 @@ import Person.PersonDirectory;
 
 /**
  *
- * @author Msanskruti
+ * @author shrutisen
  */
 public class EnterpriseAdmin extends Employee {
     

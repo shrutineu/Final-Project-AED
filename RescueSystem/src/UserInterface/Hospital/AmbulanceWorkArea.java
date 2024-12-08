@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.Hospital;
+package UserInterface.Hospital;
 
 import EmergencySystem.Emergency.Emergency;
 import EmergencySystem.EmergencySystem;
@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ishaansamel
+ * @author Msanskruti
  */
 public class AmbulanceWorkArea extends javax.swing.JPanel {
 
@@ -85,7 +85,9 @@ public class AmbulanceWorkArea extends javax.swing.JPanel {
         emergencyTable = new javax.swing.JTable();
         startJourneyBtn = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        setBackground(new java.awt.Color(220, 234, 234));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Ambulance Work Area");
 
         emergencyTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -125,7 +127,7 @@ public class AmbulanceWorkArea extends javax.swing.JPanel {
         }
 
         startJourneyBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        startJourneyBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Hospital/images/1449794518_footprint.png"))); // NOI18N
+        startJourneyBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UserInterface/Hospital/images/1449794518_footprint.png"))); // NOI18N
         startJourneyBtn.setText("Start the journey");
         startJourneyBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,12 +145,13 @@ public class AmbulanceWorkArea extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(284, 284, 284)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(285, 285, 285)
                         .addComponent(startJourneyBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(246, 246, 246))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +162,7 @@ public class AmbulanceWorkArea extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(startJourneyBtn)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

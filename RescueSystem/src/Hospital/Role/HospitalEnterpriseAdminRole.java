@@ -9,12 +9,12 @@ import EmergencySystem.EmergencySystem;
 import EmergencySystem.Enterprise.Enterprise;
 import EmergencySystem.Network.Network;
 import Hospital.UserAccount.UserAccount;
-import ui.Hospital.HospitalEnterpriseWorkArea;
+import UserInterface.Hospital.HospitalEnterpriseWorkArea;
 import javax.swing.JPanel;
 
 /**
  *
- * @author ishaansamel
+ * @author shrutisen
  */
 public class HospitalEnterpriseAdminRole extends Role {
 

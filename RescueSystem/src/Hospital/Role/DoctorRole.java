@@ -9,12 +9,12 @@ import EmergencySystem.EmergencySystem;
 import EmergencySystem.Enterprise.Enterprise;
 import EmergencySystem.Network.Network;
 import Hospital.UserAccount.UserAccount;
-import ui.Hospital.DoctorWorkArea;
+import UserInterface.Hospital.DoctorWorkArea;
 import javax.swing.JPanel;
 
 /**
  *
- * @author shrutisen
+ * @author ishaansamel
  */
 public class DoctorRole extends Role{
 

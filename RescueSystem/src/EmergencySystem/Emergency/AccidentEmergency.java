@@ -16,7 +16,7 @@ public class AccidentEmergency extends Emergency
      private ArrayList<Description> descriptionList;
     public AccidentEmergency()
     {
-        super(Emergency.EmergencyType.ACCIDENTEMERGENCY.getValue());
+        Emergency.EmergencyType.ACCIDENTEMERGENCY.getValue();
         descriptionList=new ArrayList<>();
         Description d1=new Description();
         d1.setName("Car accident-Head Injury");

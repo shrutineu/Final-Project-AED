@@ -7,11 +7,6 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.ta.TransparentPersistenceSupport;
-//import com.sun.org.apache.xml.internal.security.signature.ObjectContainer;
-import com.db4o.ObjectContainer;
-import com.db4o.config.EmbeddedConfiguration;
-import com.db4o.Db4oEmbedded;
-
 
 /**
  *
@@ -19,7 +14,7 @@ import com.db4o.Db4oEmbedded;
  */
 public class DB4OUtil {
 
-    private static final String FILENAME = "/Users/ishaansamel/Downloads/DataBank.db4o"; //  // path to the data store
+    private static final String FILENAME = "/Users/shrutisen/Downloads/DataBank.db4o"; //  // path to the data store
     private static DB4OUtil dB4OUtil;
     
     public synchronized static DB4OUtil getInstance(){

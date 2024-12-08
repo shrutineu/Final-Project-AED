@@ -10,7 +10,7 @@ import Hospital.Organisation.OrganisationDirectory;
 
 /**
  *
- * @author Msanskruti
+ * @author shrutisen
  */
 public class Hospital extends Enterprise{
     private String hospitalName;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ishaansamel
+ * @author shrutisen
  */
 public class DroneDirectory {
     private ArrayList<DroneStation> droneStationList;

@@ -9,18 +9,18 @@ import EmergencySystem.EmergencySystem;
 import EmergencySystem.Enterprise.Enterprise;
 import EmergencySystem.Network.Network;
 import Hospital.UserAccount.UserAccount;
-import ui.emergency911.emergency911WorkArea;
+import UserInterface.Emergency911Department.Emergency911DepartmentWorkArea;
 import javax.swing.JPanel;
 
 /**
  *
- * @author shrutisen
+ * @author ishaansamel
  */
 public class Emergency911EnterpriseAdminRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EmergencySystem system, Network network, Enterprise enterprise) {
-        return new emergency911WorkArea(userProcessContainer,account, system,network,enterprise);
+        return new Emergency911DepartmentWorkArea(userProcessContainer,account, system,network,enterprise);
     }
 
 

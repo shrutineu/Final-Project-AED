@@ -9,7 +9,7 @@ import Person.PersonDirectory;
 
 /**
  *
- * @author ishaansamel
+ * @author Msanskruti
  */
 public class PoliceEnterprise extends Enterprise{
 
