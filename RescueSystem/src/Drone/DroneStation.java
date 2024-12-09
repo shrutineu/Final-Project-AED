@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ishaansamel
+ * @author shrutisen
  */
 public class DroneStation {
     private String droneStationName;
@@ -73,4 +73,3 @@ public class DroneStation {
     
     
 }
-

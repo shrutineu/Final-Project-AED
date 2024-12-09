@@ -36,7 +36,7 @@ import Person.Person;
 
 /**
  *
- * @author Reema
+ * @author shrutisen
  */
 public class ConfigureASystem {
     public static EmergencySystem configure(){
@@ -56,7 +56,7 @@ public class ConfigureASystem {
         
         //Creating person directory
         Person p1=system.getPersonDirectory().addPerson();
-        p1.setName("Sayali Borse");
+        p1.setName("Isha Samel");
         p1.setAge(23);
         p1.setAddress("25 Stephen Street");
         p1.setCarOwned("Mustang");
@@ -68,7 +68,7 @@ public class ConfigureASystem {
         
         
         Person p2=system.getPersonDirectory().addPerson();
-        p2.setName("Komal Ambekar");
+        p2.setName("Sanskruti Mahajan");
         p2.setAge(27);
         p2.setAddress("615 Parker Street");
         p2.setCarOwned("Mercedes Benz");
@@ -79,7 +79,7 @@ public class ConfigureASystem {
         p2.setPhoto("Images/person2.jpg");
         
         Person p3=system.getPersonDirectory().addPerson();
-        p3.setName("Reema Dutta");
+        p3.setName("Shruti Sen");
         p3.setAge(58);
         p3.setAddress("Babcock Street");
         p3.setCarOwned("Audi");
@@ -155,7 +155,7 @@ public class ConfigureASystem {
         EnterpriseAdmin bostonpsapAdmin=new EnterpriseAdmin();
         enterprisen2_2.getEmployeeDirectory().createEmployee(bostonpsapAdmin);
         enterprisen2_2.getUserAccountDirectory().createUserAccount("bostonpsap", "bostonpsap", bostonpsapAdmin, new Emergency911EnterpriseAdminRole());
-        
+        bostonpsapAdmin.setAvailable(true);
         
         EnterpriseAdmin bostonPoliceAdmin=new EnterpriseAdmin();
         enterprisen2_3.getEmployeeDirectory().createEmployee(bostonPoliceAdmin);
@@ -202,6 +202,7 @@ public class ConfigureASystem {
         h1n1.setName("BrighamAdmin");
         h1_2.getEmployeeDirectory().createEmployee(h1n1);
         h1_2.getUserAccountDirectory().createUserAccount("brighamadmin", "brighamadmin", h1n1, new HospitalEnterpriseAdminRole());
+   
 
         HospitalEnterpriseAdmin h2n1=new HospitalEnterpriseAdmin();
         h2n1.setName("BethAdmin");
@@ -213,12 +214,13 @@ public class ConfigureASystem {
       
         h1_4.getEmployeeDirectory().createEmployee(h3n1);
         h1_4.getUserAccountDirectory().createUserAccount("shrinersadmin", "shrinersadmin", h3n1, new HospitalEnterpriseAdminRole());
+   
          
         HospitalEnterpriseAdmin h4n1=new HospitalEnterpriseAdmin();
         h4n1.setName("FenwayAdmin");
         h1_5.getEmployeeDirectory().createEmployee(h4n1);
         h1_5.getUserAccountDirectory().createUserAccount("fenwayadmin", "fenwayadmin", h4n1, new HospitalEnterpriseAdminRole());
-         
+    
         
         //creating doctor employees and ambulance employees
         h1_2.getOrganizationDirectory().createOrganisation(Type.DOCTOR);
