@@ -1,4 +1,4 @@
-package DB04;
+package Data;
 
 import EmergencySystem.ConfigureASystem;
 import EmergencySystem.EmergencySystem;
@@ -12,14 +12,14 @@ import com.db4o.ta.TransparentPersistenceSupport;
  *
  *  @author shrutisen
  */
-public class DB4OUtil {
+public class DataUtil {
 
-    private static final String FILENAME = "/Users/shrutisen/Downloads/DataBank.db4o"; //  // path to the data store
-    private static DB4OUtil dB4OUtil;
+    private static final String FILENAME = "/Users/sanskruti/Desktop/aed-final/DataBank.db4o"; //  // path to the data store
+    private static DataUtil dB4OUtil;
     
-    public synchronized static DB4OUtil getInstance(){
+    public synchronized static DataUtil getInstance(){
         if (dB4OUtil == null){
-            dB4OUtil = new DB4OUtil();
+            dB4OUtil = new DataUtil();
         }
         return dB4OUtil;
     }

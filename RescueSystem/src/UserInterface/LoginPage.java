@@ -5,7 +5,7 @@
  */
 package UserInterface;
 
-import DB04.DB4OUtil;
+import Data.DataUtil;
 import EmergencySystem.ConfigureASystem;
 import EmergencySystem.EmergencySystem;
 import EmergencySystem.Enterprise.Enterprise;
@@ -28,7 +28,7 @@ public class LoginPage extends javax.swing.JFrame {
      * Creates new form loginPage
      */
     private EmergencySystem emergencySystemObject;
-    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    private DataUtil dB4OUtil = DataUtil.getInstance();
     public LoginPage() {
         initComponents();
         
@@ -226,6 +226,7 @@ public class LoginPage extends javax.swing.JFrame {
         panel.setBackground(new java.awt.Color(220, 234, 234));
         panel.setForeground(new java.awt.Color(153, 0, 0));
 
+        jLabel1.setBackground(new java.awt.Color(204, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("SafeNest - Rapid Response System ");
 

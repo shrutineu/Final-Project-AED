@@ -86,7 +86,6 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
         calBtn.setEnabled(value);
         showDroneBtn.setEnabled(value);
         showActiveDroneBtn.setEnabled(value);
-        assignEmergencyToDroneBtn.setEnabled(value);
     }
     
     
@@ -385,7 +384,6 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
         alertTheDRonePanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         droneTable = new javax.swing.JTable();
-        assignEmergencyToDroneBtn = new javax.swing.JButton();
         emgLocLabel = new javax.swing.JLabel();
         emergencylocCombo = new javax.swing.JComboBox();
         closestDroneStation = new javax.swing.JLabel();
@@ -615,17 +613,8 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(droneTable);
 
-        assignEmergencyToDroneBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        assignEmergencyToDroneBtn.setText("Assign emergency to drone");
-        assignEmergencyToDroneBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                assignEmergencyToDroneBtnActionPerformed(evt);
-            }
-        });
-
         emgLocLabel.setBackground(new java.awt.Color(102, 0, 0));
         emgLocLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        emgLocLabel.setForeground(null);
         emgLocLabel.setText("Emergency location:");
 
         emergencylocCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -682,22 +671,18 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
 
         displacementLabel.setBackground(new java.awt.Color(102, 0, 0));
         displacementLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        displacementLabel.setForeground(null);
         displacementLabel.setText("Displacement to reach the accidental location:");
 
         inKmsLabel.setBackground(new java.awt.Color(102, 0, 0));
         inKmsLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        inKmsLabel.setForeground(null);
         inKmsLabel.setText("in kms");
 
         timeLable.setBackground(new java.awt.Color(102, 0, 0));
         timeLable.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        timeLable.setForeground(null);
         timeLable.setText("Time required to reach the accidental location:");
 
         inSecLabel.setBackground(new java.awt.Color(102, 0, 0));
         inSecLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        inSecLabel.setForeground(null);
         inSecLabel.setText("in seconds");
 
         calBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -745,14 +730,11 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(91, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alertTheDRonePanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 33, Short.MAX_VALUE)
                 .addGroup(alertTheDRonePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alertTheDRonePanelLayout.createSequentialGroup()
                         .addComponent(closestDroneStation, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alertTheDRonePanelLayout.createSequentialGroup()
-                        .addComponent(assignEmergencyToDroneBtn)
-                        .addGap(236, 236, 236))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alertTheDRonePanelLayout.createSequentialGroup()
                         .addComponent(calBtn)
                         .addGap(261, 261, 261))))
@@ -786,9 +768,7 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
                     .addComponent(showDroneBtn))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(assignEmergencyToDroneBtn)
-                .addGap(51, 51, 51))
+                .addGap(89, 89, 89))
         );
 
         jTabbedPane1.addTab("Alert the drone", alertTheDRonePanel);
@@ -1179,96 +1159,6 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
         }
         
     }//GEN-LAST:event_processTheEmrgBtnActionPerformed
-
-    private void assignEmergencyToDroneBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignEmergencyToDroneBtnActionPerformed
-        // TODO add your handling code here:
-         Emergency emrg=(Emergency) emergencylocCombo.getSelectedItem();
-        if(emrg.getEmergencyStatus().equalsIgnoreCase("Assigned to Drone")&&(emrg!=null))
-        {
-        JOptionPane.showMessageDialog(this,"Assigned to drone!");
-        }
-        
-        else{
-        int row=droneStationTable.getSelectedRow();
-        int droneRow=droneTable.getSelectedRow();
-        if(row>=0&&droneRow>=0)
-        {
-        DroneStation ds=(DroneStation) droneStationTable.getValueAt(row,0);
-         UserAccount userAcc=null;
-      
-        int selected=emergencyTable.getSelectedRow();
-        WorkRequest request=(WorkRequest) emergencyTable.getValueAt(selected, 0);
-        if (request != null){
-            
-            request.setSender(account);
-            
-               int rowSelected=droneTable.getSelectedRow();
-               
-               if(rowSelected>=0)
-               {
-                  Drone d= (Drone) droneTable.getValueAt(rowSelected,0);
-                
-                  for(Organisation org:enterprise.getOrganizationDirectory().getOrganisationList()) 
-                  {
-                      if(org instanceof DroneOrganisation)
-                      {
-                           for(UserAccount ua:org.getUserAccountDirectory().getUserAccountList())
-                         {
-                    
-                            if(ua.getEmployee()==d)
-                                {
-                     
-                         
-                                    request.setReceiver(ua);
-                                    request.setSender(account);
-                                    emrg.setEmergencyStatus("Assigned to Drone");
-                                   
-                                    ua.getWorkQueue().getWorkRequestList().add(request);
-                                    d.setStatus("Assigned");
-                                    JOptionPane.showMessageDialog(this, "Emergency added to the drone");
-                                    Date date=new Date();
-                                    emrg.setDroneAlerted(date);
-                                    emrg.setTotalTimeToReachDrone((emrg.getDroneAlerted().getTime()-emrg.getReportedTime().getTime())/1000%60);
-                                    System.err.println("Total time from emrg reported--drone alerted"+emrg.getTotalTimeToReachDrone());
-                                    DefaultTableModel model = (DefaultTableModel) droneTable.getModel();
-                                    model.setRowCount(0);
-
-                                     for (Drone drone:ds.getDroneList()){
-                                     if(drone.getStatus().equalsIgnoreCase("active"))
-                                         {
-                                            Object[] row1 = new Object[2];
-                                            row1[0] = drone;
-                                            row1[1] = drone.getStatus();
-     
-                                             model.addRow(row1);
-                                         }
-                                    
-                                }
-                         }
-                      }
-                  }
-   
-           }
-                  
-      }
-               
-               else
-               {
-                   JOptionPane.showMessageDialog(this,"Choose the drone");
-               }   
-            
-        }
-        
-        }
-        
-        else
-        {
-           JOptionPane.showMessageDialog(this, "You must choose drone station and drone to proceed");
-        }
-        
-        }
-        
-    }//GEN-LAST:event_assignEmergencyToDroneBtnActionPerformed
 
     private void emergencylocComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emergencylocComboActionPerformed
         // TODO add your handling code here:
@@ -1738,7 +1628,6 @@ public class Emergency911DepartmentWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton addDroneBtn;
     private javax.swing.JButton addDroneStnBtn;
     private javax.swing.JPanel alertTheDRonePanel;
-    private javax.swing.JButton assignEmergencyToDroneBtn;
     private javax.swing.JButton calBtn;
     private javax.swing.JLabel closestDroneStation;
     private javax.swing.JTabbedPane createDrone;
